@@ -1,0 +1,47 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Cloud Transport Recommender</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Transportation Recommendations</h1>
+    <p>Find the best way to travel between your current location and a destination city.</p>
+
+    <form id="route-form">
+        <label for="destination">Destination City:</label>
+        <input type="text" id="destination" name="destination" required placeholder="e.g., Los Angeles, London">
+
+        <label for="preference">Preference:</label>
+        <select id="preference" name="preference">
+            <option value="fastest">Fastest</option>
+            <option value="cheapest">Cheapest</option>
+            <option value="greenest">Most Environmentally Friendly</option>
+        </select>
+        <!-- Optional: Add input for test_ip if needed during development -->
+        <!--
+        <label for="test_ip">Test IP (Optional):</label>
+        <input type="text" id="test_ip" name="test_ip" placeholder="e.g., 8.8.8.8">
+        -->
+        <button type="submit" id="submit-button">Get Recommendations</button>
+    </form>
+
+    <div id="results-area" style="display: none;">
+        <h2>Results</h2>
+        <div id="info-messages">
+             <div id="origin-info"></div>
+             <div id="notes-info" style="color: orange; font-style: italic;"></div>
+        </div>
+        <div id="loading" style="display: none;">
+            <div class="spinner"></div> Loading recommendations...
+        </div>
+        <div id="error-message" class="error"></div>
+        <ul id="recommendation-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
