@@ -51,7 +51,7 @@ These instructions are for running the application components locally for develo
 
     ```bash
     git clone <your-repo-url>
-    cd multi-cloud-transport-recommendation
+    cd multiple-cloud-based-tranportation-recommendation-system
     ```
 
 2. **Set up Python Environment:** (Recommended: Use a virtual environment)
