@@ -9,7 +9,7 @@ The application is designed with a microservices architecture and intended for d
 ## Features
 
 * **Destination Input:** User provides the target destination city.
-* **Preference Selection:** User chooses between 'Fastest', 'Cheapest', or 'Greenest' route preference.
+* **Preference Selection:** User chooses between 'Fastest', 'Cheapest', or 'Environment Friendly' route preferences.
 * **Automatic Origin Detection:** Attempts to determine the user's starting city based on their public IP address.
 * **Microservice Backend:** Utilizes separate services for API orchestration, location lookup, and route calculation.
 * **Recommendation Display:** Shows a list of suggested transport modes (e.g., car, bus, train) with details:
