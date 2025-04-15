@@ -15,7 +15,7 @@ const errorDiv = document.getElementById('error-message');
 
 // --- Configuration ---
 // Use the API Gateway URL (update this if you deploy the gateway)
-const API_GATEWAY_URL = 'http://127.0.0.1:5000'; // Default for local dev
+// const API_GATEWAY_URL = 'http://127.0.0.1:5000'; // Default for local dev
 const PREFERENCE_STORAGE_KEY = 'transportPreference';
 
 // --- Functions ---
@@ -28,14 +28,12 @@ const PREFERENCE_STORAGE_KEY = 'transportPreference';
  */
 async function fetchRecommendations(destination, preference, testIp = null) {
     // Construct the URL with query parameters
-    const url = new URL(`${API_GATEWAY_URL}/api/route`);
-    url.searchParams.append('destination', destination);
-    url.searchParams.append('preference', preference);
-    // if (testIp) { // Uncomment if using test IP input
-    //     url.searchParams.append('test_ip', testIp);
-    // }
-
-    const response = await fetch(url);
+    let relativeUrl = `/api/route?destination=${encodeURIComponent(destination)}&preference=${encodeURIComponent(preference)}`; 
+       // if (testIp) { // Uncomment if using test IP input
+        //     url.searchParams.append('test_ip', testIp);
+        // }
+    
+    const response = await fetch(relativeUrl);
 
     if (!response.ok) {
         // Try to parse error details from the response body
